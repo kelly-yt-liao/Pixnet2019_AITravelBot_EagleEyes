@@ -38,7 +38,23 @@
               </div>
             </div>
             <div class="col-12 col-md-3 my-3">
-              <button type="submit" class="btn d-block w-100 mx-auto btn-search">搜尋</button>
+              <button
+                type="button"
+                class="btn d-block w-100 mx-auto btn-search"
+                data-toggle="collapse"
+                data-target="#secondSearch"
+                aria-controls="secondSearch"
+              >
+                搜尋
+              </button>
+            </div>
+          </div>
+          <div class="form-row align-items-center">
+            <div class="collapse col-12 col-md-6 my-2" id="secondSearch">
+              <input type="text" class="form-control" id="city" placeholder="城市" />
+            </div>
+            <div class="collapse col-12 col-md-6 my-2" id="secondSearch">
+              <input type="text" class="form-control" id="purpose" placeholder="目的" />
             </div>
           </div>
         </form>
@@ -46,8 +62,72 @@
     </section>
 
     <section id="suggest">
-      <div class="container">
+      <div class="container content">
+        <aside class="city text-center">
+          <div>
+            <ul>
+              <li>基隆市</li>
+              <li>台北市</li>
+              <li>新北市</li>
+              <li>桃園市</li>
+              <li>新竹市</li>
+              <li>台中市</li>
+              <li>台南市</li>
+              <li>高雄市</li>
+              <li>嘉義市</li>
+              <li>宜蘭縣</li>
+              <li>花蓮縣</li>
+            </ul>
+          </div>
+        </aside>
+        <div class="map">
+          <iframe
+            width="100%"
+            height="100%"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+            src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=台北市新生南路三段90號&z=16&output=embed&t="
+          ></iframe>
+        </div>
         <div class="suggestion"></div>
+        <div class="stroke text-start">
+          <div class="stroke-list">
+            <ul>
+              <li>你的行程</li>
+              <li>去程:</li>
+              <li>回程:</li>
+              <li>人數:</li>
+              <li>目的地:</li>
+              <li>新增目的地:</li>
+              <li>
+                <input id="option1" type="checkbox" />
+                <label for="option1">option1</label>
+              </li>
+              <li>
+                <input id="option2" type="checkbox" />
+                <label for="option2">option2</label>
+              </li>
+              <li>
+                <input id="option3" type="checkbox" />
+                <label for="option3">option3</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="viewpoint text-start">
+          <div class="viewpoint-list">
+            <ul>
+              <li><a href="">墨爾本咖啡</a></li>
+              <li><a href="">Deer Cafe咖啡</a></li>
+              <li><a href="">Beetle Land</a></li>
+              <li><a href="">StayReal Cafe一中店</a></li>
+              <li><a href="">CMYK GALLERY</a></li>
+              <li><a href="">Kusabi+</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
