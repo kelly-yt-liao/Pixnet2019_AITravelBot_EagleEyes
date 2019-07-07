@@ -31,6 +31,11 @@ const getNowDate = () => {
   return { nowYear: nowDate.getFullYear(), nowMonth: nowDate.getMonth(), nowDate: nowDate.getDate() }
 }
 
+const showSearchCity = () => {
+  const searchCity = document.getElementById('search-city')
+  searchCity.classList.remove('hide')
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   //下拉
   const selectElems = document.querySelectorAll('select')
@@ -45,5 +50,33 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   const dateElems = document.querySelectorAll('.datepicker')
   const dateInstances = M.Datepicker.init(dateElems, dateOptions)
-  // dateInstances.setDate(new Date(nowYear, nowMonth, nowDate))
+
+  //city picture
+  var cityElems = document.querySelectorAll('.carousel')
+  var cityInstances = M.Carousel.init(cityElems, {})
+
+  //package-tabs
+  var packageElems = document.querySelectorAll('.tabs')
+  var packageInstance = M.Tabs.init(packageElems, {})
+
+  //slider
+  var foodSlider = document.getElementById('food-slider')
+  noUiSlider.create(foodSlider, {
+    start: [200, 800],
+    connect: true,
+    step: 10,
+    orientation: 'horizontal', // 'horizontal' or 'vertical'
+    range: {
+      min: 0,
+      max: 1000
+    },
+    format: wNumb({
+      prefix: '$',
+      thousand: ','
+    })
+  })
+
+  foodSlider.noUiSlider.on('update', function(values, handle) {
+    console.log('values', values)
+  })
 })
