@@ -4,40 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <link rel="stylesheet" href="css/style.min.css" />
     <title>Document</title>
   </head>
   <body>
     <section id="search">
       <div class="container">
-        <div class="form-header mb-3 text-center">
+        <div class="form-header row center-align">
           <div class="title">EagleEyes</div>
-          <div class="subtitle">尋找您理想的旅行路線</div>
+          <!-- <div class="subtitle">尋找您理想的旅行路線</div> -->
         </div>
         <form>
-          <div class="form-row align-items-center">
-            <div class="col-12 col-md-3 my-2">
-              <input type="text" class="form-control" id="country" placeholder="開羅" />
+          <div class="row">
+            <div class="input-field col 3">
+              <select>
+                <option value="北部">北部</option>
+                <option value="中部">中部</option>
+                <option value="南部">南部</option>
+                <option value="東部">東部</option>
+              </select>
+              <label>選擇地區</label>
             </div>
-            <div class="col-12 col-md-3 my-2 ">
+            <div class="input-field col 2">
+              <i class="material-icons prefix">date_range</i>
+              <input type="text" class="datepicker" />
+            </div>
+            <div class="input-field col 2">
+              <i class="material-icons prefix">date_range</i>
+              <input type="text" class="datepicker" />
+            </div>
+            <div class="input-field col 3">
+              <button class="btn waves-effect waves-light" type="submit" name="action">Search
+                <i class="material-icons right">send</i>
+              </button>
+          </div>
+          <!-- <div class="row align-items-center">
+            <div class="col s12 m3 my-2">
+              <input type="text" class="form-control" id="country" />
+            </div>
+            <div class="col s12 m3 my-2 ">
               <div class="select-date">
                 <label for="startDate">開始旅行</label>
                 <input type="date" class="form-control" id="startDate" value="2019-06-28" />
               </div>
             </div>
-            <div class="col-12 col-md-3 my-2">
+            <div class="col s12 m3 my-2">
               <div class="select-date">
                 <label for="endDate">滿載而歸</label>
                 <input type="date" class="form-control" id="endDate" value="2019-06-28" />
               </div>
             </div>
-            <div class="col-12 col-md-3 my-3">
+            <div class="col s12 m3 my-3">
               <button
                 type="button"
                 class="btn d-block w-100 mx-auto btn-search"
@@ -49,14 +68,14 @@
               </button>
             </div>
           </div>
-          <div class="form-row align-items-center">
-            <div class="collapse col-12 col-md-6 my-2" id="secondSearch">
+          <div class="row align-items-center">
+            <div class="collapse col s12 m6 my-2" id="secondSearch">
               <input type="text" class="form-control" id="city" placeholder="城市" />
             </div>
-            <div class="collapse col-12 col-md-6 my-2" id="secondSearch">
+            <div class="collapse col s12 m6 my-2" id="secondSearch">
               <input type="text" class="form-control" id="purpose" placeholder="目的" />
             </div>
-          </div>
+          </div> -->
         </form>
       </div>
     </section>
@@ -131,10 +150,8 @@
       </div>
     </section>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/2e90554d29.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <script src="main.js"></script>
   </body>

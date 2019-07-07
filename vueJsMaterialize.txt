@@ -1,0 +1,43 @@
+<template>
+  <form class="row" @submit="store">
+    <div class="input-field col s6">
+      <input placeholder="Placeholder" id="first_name" type="text" class="validate" v-model="formData.firstName">
+      <label for="first_name">First Name</label>
+    </div>
+    <div class="col s6">
+      <input type="text" id="start_date" class="datepicker" v-model="formData.startDate">
+      <label for="start_date">Start Date</label>
+    </div>
+    <div class="col s6">
+      <button class="btn waves-effect waves-light" type="submit">send</button>
+    </div>
+  </form>
+</template>
+<script type="text/javascript">
+  data() {
+    return {
+      url: {
+        store: '/orders/store'
+      },
+      formData: {}
+    }
+  },
+  mounted() {
+    let elem = document.querySelector('.datepicker');
+    M.Datepicker.init(elem);
+  },
+  methods: {
+    store(e) {
+      e.preventDefault();
+
+      axios.post(this.url.store, this.formData)
+        .then(response => {
+          // ...
+        })
+        .catch(error => {
+          // ...
+        })
+    }
+    // ...
+  }
+</script>
