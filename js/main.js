@@ -49,18 +49,21 @@ const getNowDate = () => {
 }
 
 const showSearchCity = () => {
-  allHide()
+  hideAll()
   searchCity.classList.remove('hide')
+  searchCity.classList.add('show')
 }
 
 const goPackage = () => {
-  allHide()
+  hideAll()
   package.classList.remove('hide')
+  package.classList.add('show')
 }
 
 const getStroke = () => {
-  allHide()
+  hideAll()
   stroke.classList.remove('hide')
+  stroke.classList.add('show')
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -113,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var tooltipsInstances = M.Tooltip.init(tooltipsElems, { enterDelay: 100, outDuration: 100 })
 })
 
-const allHide = () => {
+const hideAll = () => {
   searchCity.classList.remove('show')
   searchCity.classList.add('hide')
   package.classList.remove('show')
