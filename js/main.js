@@ -1,18 +1,35 @@
 const endpoint = 'https://emma.pixnet.cc/mainpage/blog/categories/hot/28?api_version=2'
 const data = []
 
-const suggestion = document.querySelector('.suggestion')
-const button = document.querySelectorAll('button')
+const foodSuggestion = document.querySelector('.food-suggestion')
+const tooltips = [...document.querySelectorAll('[data-tooltip]')]
+const searchCity = document.getElementById('search-city')
+const package = document.getElementById('package')
+const stroke = document.getElementById('stroke')
+
+tooltips.forEach(item => {
+  item.addEventListener('click', e => {
+    const clickTarget = e.target
+    if (clickTarget.nodeName === 'A' || clickTarget.parentNode.nodeName === 'A') {
+      clickTarget.offsetParent.lastElementChild.classList.toggle('slide-in')
+    }
+  })
+})
 
 function displayData(data) {
   data.forEach(article => {
     if (article.cover !== '') {
-      suggestion.innerHTML += `
-        <div class="suggest-item">
-          <a href="${article.link}" class="list" target="_blank">
-            <img class="cover"  src='${article.cover}' />
-            <div>${article.title}</div>
-          </a>
+      foodSuggestion.innerHTML += `
+        <div class="suggest-item row">
+          <div class="col m10">
+            <a href="${article.link}" class="list" target="_blank">
+              <img class="cover"  src='${article.cover}' />
+              <div>${article.title}</div>
+            </a>
+          </div>
+          <div class="col m2">
+            <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+          </div>
         </div>
       `
     }
@@ -32,8 +49,18 @@ const getNowDate = () => {
 }
 
 const showSearchCity = () => {
-  const searchCity = document.getElementById('search-city')
+  allHide()
   searchCity.classList.remove('hide')
+}
+
+const goPackage = () => {
+  allHide()
+  package.classList.remove('hide')
+}
+
+const getStroke = () => {
+  allHide()
+  stroke.classList.remove('hide')
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -59,8 +86,9 @@ document.addEventListener('DOMContentLoaded', function() {
   var packageElems = document.querySelectorAll('.tabs')
   var packageInstance = M.Tabs.init(packageElems, {})
 
-  //slider
+  //預算範圍slider
   var foodSlider = document.getElementById('food-slider')
+  const fromto = [document.getElementById('from'), document.getElementById('to')]
   noUiSlider.create(foodSlider, {
     start: [200, 800],
     connect: true,
@@ -77,6 +105,19 @@ document.addEventListener('DOMContentLoaded', function() {
   })
 
   foodSlider.noUiSlider.on('update', function(values, handle) {
-    console.log('values', values)
+    fromto[handle].innerText = values[handle]
   })
+
+  //提示框
+  var tooltipsElems = document.querySelectorAll('.tooltipped')
+  var tooltipsInstances = M.Tooltip.init(tooltipsElems, { enterDelay: 100, outDuration: 100 })
 })
+
+const allHide = () => {
+  searchCity.classList.remove('show')
+  searchCity.classList.add('hide')
+  package.classList.remove('show')
+  package.classList.add('hide')
+  stroke.classList.remove('show')
+  stroke.classList.add('hide')
+}

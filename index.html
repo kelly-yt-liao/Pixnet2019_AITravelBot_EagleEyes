@@ -14,7 +14,7 @@
     <div id="search">
       <div class="container">
         <div class="form-header row center-align">
-          <div class="title">EagleEyes</div>
+          <a href="index.html"><div class="title">EagleEyes</div></a>
           <div class="subtitle">規劃您理想的旅行路線</div>
         </div>
         <div class="row search-bar">
@@ -74,7 +74,7 @@
         </div>
         <div class="row">
           <div class="col m3">
-            <div class="card city-item">
+            <div class="card city-item" onclick="goPackage()">
               <div class="card-image">
                 <img src="https://materializecss.com/images/sample-1.jpg" />
                 <span class="card-title">台北</span>
@@ -82,7 +82,7 @@
             </div>
           </div>
           <div class="col m3">
-            <div class="card city-item">
+            <div class="card city-item" onclick="goPackage()">
               <div class="card-image">
                 <img src="https://materializecss.com/images/sample-1.jpg" />
                 <span class="card-title">桃園</span>
@@ -90,7 +90,7 @@
             </div>
           </div>
           <div class="col m3">
-            <div class="card city-item">
+            <div class="card city-item" onclick="goPackage()">
               <div class="card-image">
                 <img src="https://materializecss.com/images/sample-1.jpg" />
                 <span class="card-title">新竹</span>
@@ -98,7 +98,7 @@
             </div>
           </div>
           <div class="col m3">
-            <div class="card city-item">
+            <div class="card city-item" onclick="goPackage()">
               <div class="card-image">
                 <img src="https://materializecss.com/images/sample-1.jpg" />
                 <span class="card-title">苗栗</span>
@@ -109,108 +109,119 @@
       </div>
     </div>
 
-    <div id="package" class="show">
+    <div id="package" class="hide">
       <div class="container">
         <div class="divider"></div>
+        <ul class="tabs row">
+          <li class="tab col m2"><a href="#food" class="active">推薦美食</a></li>
+          <li class="tab col m2"><a href="#ticket">近期活動/票券</a></li>
+          <li class="tab col m2"><a href="#scape">風景</a></li>
+          <li class="tab col m2"><a href="#shopping">購物</a></li>
+          <li class="tab col m4"><a href="#hotel">Hotelscombined訂房推薦</a></li>
+        </ul>
         <div class="row">
-          <div class="col m12">
-            <ul class="tabs">
-              <li class="tab col m2"><a href="#food" class="active">推薦美食</a></li>
-              <li class="tab col m2"><a href="#ticket">近期活動/票券</a></li>
-              <li class="tab col m2"><a href="#scape">風景</a></li>
-              <li class="tab col m2"><a href="#shopping">購物</a></li>
-              <li class="tab col m4"><a href="#hotel">Hotelscombined訂房推薦</a></li>
-            </ul>
-          </div>
           <div id="food" class="col m12">
-            <div class="money-slider section">
+            <div class="money-slider">
+              <div class="money-range">預算金額:<span id="from"></span> - <span id="to"></span></div>
               <div id="food-slider"></div>
             </div>
-            <div class="suggestion"></div>
+            <div id="suggest">
+              <div class="food-suggestion"></div>
+            </div>
           </div>
+        </div>
+        <div class="row">
           <div id="ticket" class="col m12">近期活動/票券</div>
+        </div>
+        <div class="row">
           <div id="scape" class="col m12">風景</div>
+        </div>
+        <div class="row">
           <div id="shopping" class="col m12">購物</div>
+        </div>
+        <div class="row">
           <div id="hotel" class="col m12">Hotelscombined訂房推薦</div>
         </div>
       </div>
+      <div id="toolbar">
+        <ul>
+          <li class="ico">
+            <a class="tooltipped" data-position="left" data-tooltip="規劃行程">
+              <i class="material-icons">list</i>
+              <span class="ico-badge badge red">4</span>
+            </a>
+            <dl class="browse">
+              <dt>規劃行程</dt>
+              <dd>
+                <ul>
+                  <li class="browse-li">
+                    <div class="browse-img">
+                      <img src="https://materializecss.com/images/sample-1.jpg" alt="" />
+                    </div>
+                    <div class="browse-title">
+                      <p>台東<br />熱氣球</p>
+                    </div>
+                    <a href="#!" class="browse-trash">
+                      <i class="material-icons">delete</i>
+                    </a>
+                  </li>
+                  <li class="browse-li">
+                    <div class="browse-img">
+                      <img src="https://materializecss.com/images/sample-1.jpg" alt="" />
+                    </div>
+                    <div class="browse-title">
+                      <p>台東<br />熱氣球</p>
+                    </div>
+                    <a href="#!" class="browse-trash">
+                      <i class="material-icons">delete</i>
+                    </a>
+                  </li>
+                </ul>
+                <div class="get-stroke">
+                  <button class="btn waves-effect" onclick="getStroke()">get行程</button>
+                </div>
+              </dd>
+            </dl>
+          </li>
+          <li class="ico">
+            <a class="tooltipped" data-position="left" data-tooltip="我的最愛">
+              <i class="material-icons">star</i>
+              <span class="ico-badge badge red">4</span>
+            </a>
+            <dl class="browse">
+              <dt>我的最愛</dt>
+              <dd>
+                <ul>
+                  <li class="browse-li">
+                    <div class="browse-img">
+                      <img src="https://materializecss.com/images/sample-1.jpg" alt="" />
+                    </div>
+                    <div class="browse-title">
+                      <p>台東<br />熱氣球</p>
+                    </div>
+                    <a href="#!" class="browse-trash">
+                      <i class="material-icons">delete</i>
+                    </a>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <!-- <section id="suggest">
-      <div class="container content">
-        <aside class="city text-center">
-          <div>
-            <ul>
-              <li>基隆市</li>
-              <li>台北市</li>
-              <li>新北市</li>
-              <li>桃園市</li>
-              <li>新竹市</li>
-              <li>台中市</li>
-              <li>台南市</li>
-              <li>高雄市</li>
-              <li>嘉義市</li>
-              <li>宜蘭縣</li>
-              <li>花蓮縣</li>
-            </ul>
-          </div>
-        </aside>
-        <div class="map">
-          <iframe
-            width="100%"
-            height="100%"
-            frameborder="0"
-            scrolling="no"
-            marginheight="0"
-            marginwidth="0"
-            src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=台北市新生南路三段90號&z=16&output=embed&t="
-          ></iframe>
-        </div>
-      
-        <div class="stroke text-start">
-          <div class="stroke-list">
-            <ul>
-              <li>你的行程</li>
-              <li>去程:</li>
-              <li>回程:</li>
-              <li>人數:</li>
-              <li>目的地:</li>
-              <li>新增目的地:</li>
-              <li>
-                <input id="option1" type="checkbox" />
-                <label for="option1">option1</label>
-              </li>
-              <li>
-                <input id="option2" type="checkbox" />
-                <label for="option2">option2</label>
-              </li>
-              <li>
-                <input id="option3" type="checkbox" />
-                <label for="option3">option3</label>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="viewpoint text-start">
-          <div class="viewpoint-list">
-            <ul>
-              <li><a href="">墨爾本咖啡</a></li>
-              <li><a href="">Deer Cafe咖啡</a></li>
-              <li><a href="">Beetle Land</a></li>
-              <li><a href="">StayReal Cafe一中店</a></li>
-              <li><a href="">CMYK GALLERY</a></li>
-              <li><a href="">Kusabi+</a></li>
-            </ul>
-          </div>
-        </div>
+    <div id="stroke" class="hide">
+      <div class="container">
+        <h1>abc</h1>
       </div>
-    </section> -->
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.2/nouislider.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.1.0/wNumb.min.js"></script>
 
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
