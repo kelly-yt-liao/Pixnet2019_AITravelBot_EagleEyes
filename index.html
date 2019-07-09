@@ -58,15 +58,18 @@
         </div>
         <div id="step-info" class="stepper hide">
           <div class="step active-step">
-            <span class="step-number" data-title="選取城市">1</span>
+            <span class="step-number">1</span>
+            <span class="step-title">選取城市</span>
           </div>
           <span class="progress complete"></span>
           <div class="step">
-            <span class="step-number" data-title="挑選景點">2</span>
+            <span class="step-number">2</span>
+            <span class="step-title">挑選景點</span>
           </div>
           <span class="progress"></span>
           <div class="step">
-            <span class="step-number" data-title="查看行程">3</span>
+            <span class="step-number">3</span>
+            <span class="step-title">查看行程</span>
           </div>
         </div>
       </div>
@@ -236,23 +239,28 @@
         </ul>
         <div class="stepper">
           <a class="step" onclick="getStrokeDetail(this)" data-point="1">
-            <span class="step-number">1</span>
-            <span class="step-title">Step 1</span>
+            <span class="step-number" data-title="大雅夜市">1</span>
           </a>
           <span class="progress"></span>
           <a class="step" onclick="getStrokeDetail(this)" data-point="2">
-            <span class="step-number">2</span>
-            <span class="step-title">Step 2</span>
+            <span class="step-number" data-title="午餐桶仔雞">2</span>
           </a>
           <span class="progress"></span>
           <a class="step" onclick="getStrokeDetail(this)" data-point="3">
-            <span class="step-number">3</span>
-            <span class="step-title">And... Step 3</span>
+            <span class="step-number" data-title="紅樹林騎腳踏車">3</span>
+          </a>
+          <span class="progress"></span>
+          <a class="step" onclick="getStrokeDetail(this)" data-point="4">
+            <span class="step-number" data-title="吃甜點">4</span>
+          </a>
+          <span class="progress"></span>
+          <a class="step" onclick="getStrokeDetail(this)" data-point="5">
+            <span class="step-number" data-title="逛夜市">5</span>
           </a>
         </div>
         <div class="row">
           <div id="day1" class="col m12">
-            <div id="point1" class="stroke-detail">
+            <div id="point1" class="stroke-detail card">
               <div class="detail-img">
                 <img src="https://materializecss.com/images/sample-1.jpg" alt="" />
               </div>
@@ -286,7 +294,7 @@
                 ></iframe>
               </div>
             </div>
-            <div id="point2" class="stroke-detail hide">
+            <div id="point2" class="stroke-detail card hide">
               <div class="detail-img">
                 <img src="https://picsum.photos/id/1/1024/768" alt="" />
               </div>
@@ -320,7 +328,7 @@
                 ></iframe>
               </div>
             </div>
-            <div id="point3" class="stroke-detail hide">
+            <div id="point3" class="stroke-detail card hide">
               <div class="detail-img">
                 <img src="https://picsum.photos/id/1/1024/768" alt="" />
               </div>
