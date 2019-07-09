@@ -6,6 +6,8 @@ const tooltips = [...document.querySelectorAll('[data-tooltip]')]
 const searchCity = document.getElementById('search-city')
 const package = document.getElementById('package')
 const stroke = document.getElementById('stroke')
+const strokeDetails = [...document.querySelectorAll('.stroke-detail')]
+const stepInfo = document.getElementById('step-info')
 
 tooltips.forEach(item => {
   item.addEventListener('click', e => {
@@ -52,18 +54,28 @@ const showSearchCity = () => {
   hideAll()
   searchCity.classList.remove('hide')
   searchCity.classList.add('show')
+  stepInfo.classList.remove('hide')
 }
 
 const goPackage = () => {
   hideAll()
   package.classList.remove('hide')
   package.classList.add('show')
+  console.log(stepInfo)
 }
 
 const getStroke = () => {
   hideAll()
   stroke.classList.remove('hide')
   stroke.classList.add('show')
+}
+
+const getStrokeDetail = target => {
+  let point = target.dataset.point - 1
+  strokeDetails.forEach(item => {
+    item.classList.add('hide')
+  })
+  strokeDetails[point].classList.remove('hide')
 }
 
 document.addEventListener('DOMContentLoaded', function() {

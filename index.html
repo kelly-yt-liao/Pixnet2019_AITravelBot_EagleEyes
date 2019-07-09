@@ -56,6 +56,19 @@
             </div>
           </form>
         </div>
+        <div id="step-info" class="stepper hide">
+          <div class="step active-step">
+            <span class="step-number" data-title="選取城市">1</span>
+          </div>
+          <span class="progress complete"></span>
+          <div class="step">
+            <span class="step-number" data-title="挑選景點">2</span>
+          </div>
+          <span class="progress"></span>
+          <div class="step">
+            <span class="step-number" data-title="查看行程">3</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -212,9 +225,151 @@
       </div>
     </div>
 
-    <div id="stroke" class="show">
+    <div id="stroke" class="hide">
       <div class="container">
-        <dl>
+        <ul class="tabs row">
+          <li class="tab col m2"><a href="#day1">1/1</a></li>
+          <li class="tab col m2"><a href="#day2">1/2</a></li>
+          <li class="tab col m2"><a href="#day3">1/3</a></li>
+          <li class="tab col m2"><a href="#day4">1/4</a></li>
+          <li class="tab col m4"><a href="#day5">1/5</a></li>
+        </ul>
+        <div class="stepper">
+          <a class="step" onclick="getStrokeDetail(this)" data-point="1">
+            <span class="step-number">1</span>
+            <span class="step-title">Step 1</span>
+          </a>
+          <span class="progress"></span>
+          <a class="step" onclick="getStrokeDetail(this)" data-point="2">
+            <span class="step-number">2</span>
+            <span class="step-title">Step 2</span>
+          </a>
+          <span class="progress"></span>
+          <a class="step" onclick="getStrokeDetail(this)" data-point="3">
+            <span class="step-number">3</span>
+            <span class="step-title">And... Step 3</span>
+          </a>
+        </div>
+        <div class="row">
+          <div id="day1" class="col m12">
+            <div id="point1" class="stroke-detail">
+              <div class="detail-img">
+                <img src="https://materializecss.com/images/sample-1.jpg" alt="" />
+              </div>
+              <div class="detail-intro">
+                <p class="detail-title">景點介紹Day1</p>
+                <label class="detail-text"
+                  >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, est dolorem. Quae voluptatum
+                  debitis ab, reiciendis iure asperiores nobis in deserunt blanditiis perferendis possimus nesciunt non
+                  inventore nulla. Nobis, atque!
+                </label>
+              </div>
+              <div class="detail-info">
+                <p>景點資訊</p>
+                <label
+                  >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, est dolorem. Quae voluptatum
+                  debitis ab
+                </label>
+              </div>
+              <div class="detail-mark">
+                <textarea name="mark" id="mark" cols="50" rows="10">大吃特吃</textarea>
+              </div>
+              <div class="detail-map">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  frameborder="0"
+                  scrolling="no"
+                  marginheight="0"
+                  marginwidth="0"
+                  src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=台北市新生南路三段90號&z=16&output=embed&t="
+                ></iframe>
+              </div>
+            </div>
+            <div id="point2" class="stroke-detail hide">
+              <div class="detail-img">
+                <img src="https://picsum.photos/id/1/1024/768" alt="" />
+              </div>
+              <div class="detail-intro">
+                <p class="detail-title">景點介紹Day2</p>
+                <label class="detail-text"
+                  >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, est dolorem. Quae voluptatum
+                  debitis ab, reiciendis iure asperiores nobis in deserunt blanditiis perferendis possimus nesciunt non
+                  inventore nulla. Nobis, atque!
+                </label>
+              </div>
+              <div class="detail-info">
+                <p>景點資訊</p>
+                <label
+                  >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, est dolorem. Quae voluptatum
+                  debitis ab
+                </label>
+              </div>
+              <div class="detail-mark">
+                <textarea name="mark" id="mark" cols="50" rows="10">大吃特吃</textarea>
+              </div>
+              <div class="detail-map">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  frameborder="0"
+                  scrolling="no"
+                  marginheight="0"
+                  marginwidth="0"
+                  src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=台北市新生南路二段90號&z=16&output=embed&t="
+                ></iframe>
+              </div>
+            </div>
+            <div id="point3" class="stroke-detail hide">
+              <div class="detail-img">
+                <img src="https://picsum.photos/id/1/1024/768" alt="" />
+              </div>
+              <div class="detail-intro">
+                <p class="detail-title">景點介紹Day3</p>
+                <label class="detail-text"
+                  >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, est dolorem. Quae voluptatum
+                  debitis ab, reiciendis iure asperiores nobis in deserunt blanditiis perferendis possimus nesciunt non
+                  inventore nulla. Nobis, atque!
+                </label>
+              </div>
+              <div class="detail-info">
+                <p>景點資訊</p>
+                <label
+                  >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, est dolorem. Quae voluptatum
+                  debitis ab
+                </label>
+              </div>
+              <div class="detail-mark">
+                <textarea name="mark" id="mark" cols="50" rows="10">大吃特吃</textarea>
+              </div>
+              <div class="detail-map">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  frameborder="0"
+                  scrolling="no"
+                  marginheight="0"
+                  marginwidth="0"
+                  src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=台北市新生南路二段90號&z=16&output=embed&t="
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div id="day2" class="col m12">day2</div>
+        </div>
+        <div class="row">
+          <div id="day3" class="col m12">day3</div>
+        </div>
+        <div class="row">
+          <div id="day4" class="col m12">day4</div>
+        </div>
+        <div class="row">
+          <div id="day5" class="col m12">day5</div>
+        </div>
+
+        <!-- <dl>
           <dt>7/7行程</dt>
           <dd>大雅市場逛早市</dd>
           <dd>午餐桶仔雞</dd>
@@ -222,7 +377,7 @@
           <dd>吃甜點</dd>
           <dd>逛夜市</dd>
           <dd>看夜景</dd>
-        </dl>
+        </dl> -->
       </div>
     </div>
 
