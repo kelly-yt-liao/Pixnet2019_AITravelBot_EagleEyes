@@ -1,7 +1,7 @@
 const endpoint = 'https://emma.pixnet.cc/mainpage/blog/categories/hot/28?api_version=2'
 const data = []
 
-const foodSuggestion = document.querySelector('.food-suggestion')
+const foodSuggestions = [...document.querySelectorAll('.food-suggestion')]
 const tooltips = [...document.querySelectorAll('[data-tooltip]')]
 const searchCity = document.getElementById('search-city')
 const package = document.getElementById('package')
@@ -18,10 +18,11 @@ tooltips.forEach(item => {
   })
 })
 
-function displayData(data) {
+const displayData = data => {
   data.forEach(article => {
     if (article.cover !== '') {
-      foodSuggestion.innerHTML += `
+      foodSuggestions.forEach(item => {
+        item.innerHTML += `
         <div class="suggest-item row">
           <div class="col m10">
             <a href="${article.link}" class="list" target="_blank">
@@ -34,6 +35,7 @@ function displayData(data) {
           </div>
         </div>
       `
+      })
     }
   })
 }
@@ -61,13 +63,14 @@ const goPackage = () => {
   hideAll()
   package.classList.remove('hide')
   package.classList.add('show')
-  console.log(stepInfo)
+  // console.log(stepInfo)
 }
 
+//取得行程頁面 因要選定日期 故用opacity控制不然有bug html也有做調整
 const getStroke = () => {
   hideAll()
-  stroke.classList.remove('hide')
-  stroke.classList.add('show')
+  stroke.setAttribute('style', 'opacity:1;')
+  document.getElementById('day1').setAttribute('style', 'display:block;')
 }
 
 const getStrokeDetail = target => {
@@ -86,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
   //日期
   const { nowYear, nowMonth, nowDate } = getNowDate()
   const dateOptions = {
-    defaultDate: new Date(nowYear, nowMonth, nowDate),
+    defaultDate: new Date('2019', '00', '01'),
     setDefaultDate: true,
     format: 'yyyy / mm / dd'
   }
@@ -102,9 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var packageInstance = M.Tabs.init(packageElems, {})
 
   //預算範圍slider
-  var foodSlider = document.getElementById('food-slider')
-  const fromto = [document.getElementById('from'), document.getElementById('to')]
-  noUiSlider.create(foodSlider, {
+  const noUiSliderOption = {
     start: [200, 800],
     connect: true,
     step: 10,
@@ -117,11 +118,45 @@ document.addEventListener('DOMContentLoaded', function() {
       prefix: '$',
       thousand: ','
     })
-  })
+  }
+
+  //#region 推薦美食、近期活動寫死頁面-待改
+  //food
+  var foodSlider = document.getElementById('food-slider')
+  const foodFromto = [document.getElementById('food-from'), document.getElementById('food-to')]
+  noUiSlider.create(foodSlider, noUiSliderOption)
 
   foodSlider.noUiSlider.on('update', function(values, handle) {
-    fromto[handle].innerText = values[handle]
+    foodFromto[handle].innerText = values[handle]
   })
+
+  //ticket
+  var ticketSlider = document.getElementById('ticket-slider')
+  const ticketFromto = [document.getElementById('ticket-from'), document.getElementById('ticket-to')]
+  noUiSlider.create(ticketSlider, noUiSliderOption)
+
+  ticketSlider.noUiSlider.on('update', function(values, handle) {
+    ticketFromto[handle].innerText = values[handle]
+  })
+
+  //scape
+  var foodSlider = document.getElementById('scape-slider')
+  const scapeFromto = [document.getElementById('scape-from'), document.getElementById('scape-to')]
+  noUiSlider.create(foodSlider, noUiSliderOption)
+
+  foodSlider.noUiSlider.on('update', function(values, handle) {
+    scapeFromto[handle].innerText = values[handle]
+  })
+  //shopping
+  var shoppingSlider = document.getElementById('shopping-slider')
+  const shoppingFromto = [document.getElementById('shopping-from'), document.getElementById('shopping-to')]
+  noUiSlider.create(shoppingSlider, noUiSliderOption)
+
+  foodSlider.noUiSlider.on('update', function(values, handle) {
+    shoppingFromto[handle].innerText = values[handle]
+  })
+
+  //#endregion
 
   //提示框
   var tooltipsElems = document.querySelectorAll('.tooltipped')
@@ -133,6 +168,4 @@ const hideAll = () => {
   searchCity.classList.add('hide')
   package.classList.remove('show')
   package.classList.add('hide')
-  stroke.classList.remove('show')
-  stroke.classList.add('hide')
 }
