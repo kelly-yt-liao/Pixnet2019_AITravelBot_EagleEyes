@@ -8,6 +8,7 @@ const package = document.getElementById('package')
 const stroke = document.getElementById('stroke')
 const strokeDetails = [...document.querySelectorAll('.stroke-detail')]
 const stepInfo = document.getElementById('step-info')
+const steps = [...document.querySelectorAll('.step')]
 
 tooltips.forEach(item => {
   item.addEventListener('click', e => {
@@ -63,7 +64,7 @@ const goPackage = () => {
   hideAll()
   package.classList.remove('hide')
   package.classList.add('show')
-  // console.log(stepInfo)
+  setStepCss(0)
 }
 
 //取得行程頁面 因要選定日期 故用opacity控制不然有bug html也有做調整
@@ -71,6 +72,7 @@ const getStroke = () => {
   hideAll()
   stroke.setAttribute('style', 'opacity:1;')
   document.getElementById('day1').setAttribute('style', 'display:block;')
+  setStepCss(1)
 }
 
 const getStrokeDetail = target => {
@@ -78,7 +80,11 @@ const getStrokeDetail = target => {
   strokeDetails.forEach(item => {
     item.classList.add('hide')
   })
+  steps.forEach(step => {
+    step.classList.remove('active')
+  })
   strokeDetails[point].classList.remove('hide')
+  target.classList.add('active')
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -168,4 +174,13 @@ const hideAll = () => {
   searchCity.classList.add('hide')
   package.classList.remove('show')
   package.classList.add('hide')
+}
+
+//step css
+const progress = [...document.querySelectorAll('#step-info .progress')]
+const step = [...document.querySelectorAll('#step-info .step')].slice(1)
+
+const setStepCss = index => {
+  step[index].classList.add('active-step')
+  progress[index].classList.add('complete')
 }
