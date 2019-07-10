@@ -1,5 +1,5 @@
 # EagleEyes-規劃旅遊行程的好夥伴
-[初審報名規劃書-ppt檔案](https://drive.google.com/open?id=11X7IQq9ad1j9CgCvyMykFdcrRMCP_SG_)
+[初審報名計劃書-ppt檔案](https://drive.google.com/open?id=11X7IQq9ad1j9CgCvyMykFdcrRMCP_SG_)
 
 [Demo](https://kelly-yt-liao.github.io/Pixnet2019_AITravelBot_EagleEyes)
 
