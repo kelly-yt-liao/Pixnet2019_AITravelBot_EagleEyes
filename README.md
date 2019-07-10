@@ -23,9 +23,9 @@
 
 ## Screen Photo
 
-![step1](https://kelly-yt-liao.github.io/Pixnet2019_AITravelBot_EagleEyes/blob/master/img/step1.JPG)
-![step2](https://kelly-yt-liao.github.io/Pixnet2019_AITravelBot_EagleEyes/blob/master/img/step2.JPG)
-![step3](https://kelly-yt-liao.github.io/Pixnet2019_AITravelBot_EagleEyes/blob/master/img/step3.JPG
+![step1](https://github.com/kelly-yt-liao/Pixnet2019_AITravelBot_EagleEyes/blob/master/img/step1.JPG)
+![step2](https://github.com/kelly-yt-liao/Pixnet2019_AITravelBot_EagleEyes/blob/master/img/step2.JPG)
+![step3](https://github.com/kelly-yt-liao/Pixnet2019_AITravelBot_EagleEyes/blob/master/img/step3.JPG)
 
 ## 使用工具
 
