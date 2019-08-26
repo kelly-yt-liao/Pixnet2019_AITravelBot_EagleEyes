@@ -4,7 +4,7 @@
 
 [Demo](https://ee-vue.leoling127.now.sh/#/)
 
-[API Document](https://drive.google.com/open?id=1a2pfukbYEP2wBznTKVX6rT-s2spLJ0No)
+[API Document](https://github.com/kelly-yt-liao/Pixnet2019_AITravelBot_EagleEyes/tree/master/Back-end)
 
 此專案依照地區、期間、旅遊目的提供使用者一套人氣景點行程表
 
